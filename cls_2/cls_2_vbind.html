@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>'v-bind' Image Source Example</title>
+  <style>
+    #app {
+      border: dashed black 1px;
+      /* it will give border in dash */
+      width: 250px;
+        /* width is the width of the element. */
+      padding: 0 100px 10px 10px; /* top right bottom left */
+        /* padding is the space between the content and the border. other padding options are: padding-top, padding-bottom, padding-left, padding-right. */
+      }
+
+      img {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<h1>'v-bind' Image Source Example</h1>
+
+<div id="app">
+  <p>The browser finds the 'src' attribute value from the Vue instance with the use of 'v-bind'.</p>
+  <img v-bind:src="url">
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+   data() {
+    return {
+      url: "https://www.w3schools.com/vue/img_beach3.jpg"
+    }
+   }
+  })
+  app.mount('#app')
+</script>
+
+</body>
+</html>

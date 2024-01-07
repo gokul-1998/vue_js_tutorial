@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue page</title>
+  <style>
+    #app {
+      display: inline-block;
+      /*  inline block means  that the element is displayed as an inline-level block container.
+          The element itself is formatted as an inline element, but you can apply height and width values.
+          This means that you can use the height and width properties on the element.
+          Inline-block elements are like inline elements but they can have a width and height.
+          Also, the top and bottom margins/paddings are respected, but with inline elements they are not.
+        */
+      padding: 10px;
+      padding-left: 50px;
+      padding-right: 50%;
+      padding-top: 20px;
+      /* more preference is given to padding-top. because it is the last one. */
+      /* padding is the space between the content and the border. other padding options are: padding-top, padding-bottom, padding-left, padding-right. */
+      
+      /* other options are: margin, border, outline. */
+       
+      border: 3px solid black;
+      /* border is the border around the element.
+      other options for border are: border-top, border-bottom, border-left, border-right.
+      other options for border are: border-width, border-style, border-color.
+      other options for border are: border-top-width, border-top-style, border-top-color.
+      */
+
+
+
+      
+      font-size: 100px;
+      /*  it wont affect it as it has come first */
+      font-size: xx-large; 
+      /* font-size is the size of the text. 
+          x-large is the largest size. 
+          The sizes are: xx-small, x-small, small, medium, large, x-large, xx-large.
+          
+      */
+
+      background-color: lightgreen;
+      /* background-color is the color of the background. */
+    }
+  </style>
+</head>
+<body>
+
+<h1>Vue Example</h1>
+
+<p>The message is taken from 'data' inside the Vue instance by writing {{ message }} inside the div with id="app".</p>
+
+<div id="app">
+  {{ 'this is a ' + message }}<br>
+  {{'the name is ' + name}}
+  <h3>{{classs}}</h3>
+  {{'Random number: ' + Math.ceil(Math.random()*6) }}
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script>
+  const app = Vue.createApp({
+   data() {
+    return {
+     message: "Hello World!",
+     name:"Rahul",
+      classs:"Class 1"
+    }
+   }
+  })
+  
+  app.mount('#app')
+
+</script>
+
+</body>
+</html>
